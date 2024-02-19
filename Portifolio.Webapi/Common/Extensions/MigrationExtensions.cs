@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Portifolio.Webapi.Common.Pesistence;
+using Portifolio.Webapi.Persistence;
 using Portifolio.Webapi.Persistence;
 
 namespace Portifolio.Webapi.Common.Extensions;

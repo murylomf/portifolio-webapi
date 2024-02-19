@@ -3,7 +3,7 @@ using Carter.OpenApi;
 using FluentValidation;
 using MediatR;
 using Portifolio.Webapi.Contracts;
-using Portifolio.Webapi.Common.Pesistence;
+using Portifolio.Webapi.Persistence;
 using Portifolio.Webapi.Models;
 using Portifolio.Webapi.Persistence;
 

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Portifolio.Webapi.Models;
 
-namespace Portifolio.Webapi.Common.Pesistence.Configurations;
+namespace Portifolio.Webapi.Persistence.Configurations;
 
 public class ProdutoConfiguration : IEntityTypeConfiguration<Produto>
 {
@@ -11,11 +11,11 @@ public class ProdutoConfiguration : IEntityTypeConfiguration<Produto>
         builder.Property(p => p.Id)
             .IsRequired()
             .HasMaxLength(24);
-        
-        builder.Property(p =>p.Vencimento)
+
+        builder.Property(p => p.Vencimento)
             .IsRequired();
-        
-        builder.Property(p =>p.Valor)
+
+        builder.Property(p => p.Valor)
             .IsRequired();
     }
 }
