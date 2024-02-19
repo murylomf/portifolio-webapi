@@ -1,3 +1,4 @@
+using Carter;
 using Carter.OpenApi;
 using Portifolio.Webapi;
 using Portifolio.Webapi.Common.Extensions;
@@ -14,9 +15,13 @@ builder.Services
 
 var app = builder.Build();
 
-app.MapGet("/hello", () => "Hello World!").WithTags("Ged")
-    .WithName("hello")
-    .IncludeInOpenApi();;
+// app.MapGet("/hello", () => "Hello World!").WithTags("Ged")
+//     .WithName("hello")
+//     .IncludeInOpenApi();
 
 app.ApplyMigrations();
+app.UseSwagger();
+app.UseSwaggerUI();
+app.UseHttpsRedirection();
+app.MapCarter();
 app.Run();
