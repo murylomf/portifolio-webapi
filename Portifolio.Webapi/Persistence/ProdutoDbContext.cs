@@ -3,13 +3,10 @@ using Portifolio.Webapi.Models;
 
 namespace Portifolio.Webapi.Persistence;
 
-public class ProdutoDbContext : DbContext
+public class ProdutoDbContext(DbContextOptions<ProdutoDbContext> options)
+    : DbContext(options)
 {
-    public ProdutoDbContext(DbContextOptions<ProdutoDbContext> options) : base(options)
-    {
-    }
-
-    public DbSet<Produto> Produtos { get; set; }
+    public DbSet<Produto>? Produtos { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -23,6 +20,8 @@ public class ProdutoDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder
+            .UseSqlite(@"Data Source=Persistence/produtos.db")
             .LogTo(Console.WriteLine)
             .EnableSensitiveDataLogging();
+    
 }

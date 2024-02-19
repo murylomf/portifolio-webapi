@@ -39,7 +39,7 @@ public class CreateProduto
                 Vencimento = request.Vencimento
             };
             
-            context.Produtos.Add(produto);
+            context.Produtos?.Add(produto);
             
             await context.SaveChangesAsync(cancellationToken);
         }
@@ -50,11 +50,10 @@ public class CreateProdutoModule : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapPost("api/fidc/receive-signed-envelope", async (ISender sender, CreateProdutoRequest request) =>
+        app.MapPost("api/create-produto", async (ISender sender, CreateProdutoRequest request) =>
             {
                 var query = new CreateProduto.Command(request.Id, request.Valor, request.Vencimento);
                 await sender.Send(query);
-
             })
             .Accepts<CreateProdutoRequest>("application/json")
             .WithTags("Produto")

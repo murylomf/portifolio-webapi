@@ -15,7 +15,7 @@ public static class DependencyInjection
         services.AddCarter();
         services.AddDbContext<ProdutoDbContext>(options =>
         {
-            options.UseSqlite("Data Source=Persistence/produtos.db");
+            options.UseSqlite(@"Data Source=Persistence/produtos.db");
         });
 
         services.AddMediatR(config => config.RegisterServicesFromAssembly(Assembly));
