@@ -1,8 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "KMGdifSspSmFHVNip7HS1ENW0b2KOzdhYYOXOGQVW0Y6wriaPTbikkqG57+1rkOHAFMcAZhe5f9n6Wp4J5hsFg==",
+  "dgSpecHash": "Rf/zz09rikgFvTYuVL0dcQLlffdKRCa1tZV8rTnLw+PcsTq49u8sO24dphHxj6Kr53C6/SnClr8H48OScbPpOA==",
   "success": true,
-  "projectFilePath": "/Users/murylofirmino/Documents/GitHub/Portifolio.WebApi/Portifolio.Webapi/Portifolio.Webapi.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\4960012726\\Documents\\portifolio-webapi\\Portifolio.Webapi\\Portifolio.Webapi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\4960012726\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.2\\microsoft.entityframeworkcore.8.0.2.nupkg.sha512",
+    "C:\\Users\\4960012726\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.2\\microsoft.entityframeworkcore.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\4960012726\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.2\\microsoft.entityframeworkcore.analyzers.8.0.2.nupkg.sha512",
+    "C:\\Users\\4960012726\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\8.0.2\\microsoft.entityframeworkcore.relational.8.0.2.nupkg.sha512",
+    "C:\\Users\\4960012726\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0\\microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\4960012726\\.nuget\\packages\\microsoft.extensions.caching.memory\\8.0.0\\microsoft.extensions.caching.memory.8.0.0.nupkg.sha512",
+    "C:\\Users\\4960012726\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\4960012726\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "C:\\Users\\4960012726\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\4960012726\\.nuget\\packages\\microsoft.extensions.logging\\8.0.0\\microsoft.extensions.logging.8.0.0.nupkg.sha512",
+    "C:\\Users\\4960012726\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\4960012726\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
+    "C:\\Users\\4960012726\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/murylofirmino/Documents/GitHub/Portifolio.Webapi/Portifolio.Webapi/Portifolio.Webapi.csproj": {}
+    "C:\\Users\\4960012726\\Documents\\portifolio-webapi\\Portifolio.Webapi\\Portifolio.Webapi.csproj": {}
   },
   "projects": {
-    "/Users/murylofirmino/Documents/GitHub/Portifolio.Webapi/Portifolio.Webapi/Portifolio.Webapi.csproj": {
+    "C:\\Users\\4960012726\\Documents\\portifolio-webapi\\Portifolio.Webapi\\Portifolio.Webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/murylofirmino/Documents/GitHub/Portifolio.Webapi/Portifolio.Webapi/Portifolio.Webapi.csproj",
+        "projectUniqueName": "C:\\Users\\4960012726\\Documents\\portifolio-webapi\\Portifolio.Webapi\\Portifolio.Webapi.csproj",
         "projectName": "Portifolio.Webapi",
-        "projectPath": "/Users/murylofirmino/Documents/GitHub/Portifolio.Webapi/Portifolio.Webapi/Portifolio.Webapi.csproj",
-        "packagesPath": "/Users/murylofirmino/.nuget/packages/",
-        "outputPath": "/Users/murylofirmino/Documents/GitHub/Portifolio.Webapi/Portifolio.Webapi/obj/",
+        "projectPath": "C:\\Users\\4960012726\\Documents\\portifolio-webapi\\Portifolio.Webapi\\Portifolio.Webapi.csproj",
+        "packagesPath": "C:\\Users\\4960012726\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\4960012726\\Documents\\portifolio-webapi\\Portifolio.Webapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/murylofirmino/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\4960012726\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -37,6 +39,16 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -56,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
