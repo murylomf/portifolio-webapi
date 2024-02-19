@@ -1,9 +1,22 @@
+using Carter.OpenApi;
+using Portifolio.Webapi;
 using Portifolio.Webapi.Common.Extensions;
+using Portifolio.Webapi.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
+var configuration = AppSettings.Configuration();
+
+builder.Services
+    .AddWebApi(configuration)
+    .AddSwagger();
+
+
+
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/hello", () => "Hello World!").WithTags("Ged")
+    .WithName("hello")
+    .IncludeInOpenApi();;
 
 app.ApplyMigrations();
 app.Run();
