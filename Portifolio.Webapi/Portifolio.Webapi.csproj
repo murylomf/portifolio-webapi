@@ -24,9 +24,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="Persistence\produtos.db" />
-      <Content Include="Persistence\produtos.db-shm" />
-      <Content Include="Persistence\produtos.db-wal" />
+      <Folder Include="Persistence\Migrations\" />
     </ItemGroup>
 
 </Project>

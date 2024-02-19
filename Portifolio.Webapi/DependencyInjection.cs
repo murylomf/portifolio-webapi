@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Portifolio.Webapi.Common.Pesistence;
 using Microsoft.Extensions.Options;
+using Portifolio.Webapi.Persistence;
 
 namespace Portifolio.Webapi;
 

@@ -12,12 +12,11 @@ builder.Services
     .AddSwagger();
 
 
-
 var app = builder.Build();
 
-// app.MapGet("/hello", () => "Hello World!").WithTags("Ged")
-//     .WithName("hello")
-//     .IncludeInOpenApi();
+app.MapGet("/hello", () => "Hello World!").WithTags("Ged")
+    .WithName("hello")
+    .IncludeInOpenApi();
 
 app.ApplyMigrations();
 app.UseSwagger();

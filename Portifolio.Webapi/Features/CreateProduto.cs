@@ -5,6 +5,7 @@ using MediatR;
 using Portifolio.Webapi.Contracts;
 using Portifolio.Webapi.Common.Pesistence;
 using Portifolio.Webapi.Models;
+using Portifolio.Webapi.Persistence;
 
 namespace Portifolio.Webapi.Features;
 
@@ -37,7 +38,9 @@ public class CreateProduto
                 Valor = request.Valor,
                 Vencimento = request.Vencimento
             };
+            
             context.Produtos.Add(produto);
+            
             await context.SaveChangesAsync(cancellationToken);
         }
     }
