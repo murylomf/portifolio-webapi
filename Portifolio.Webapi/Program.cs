@@ -21,6 +21,5 @@ app.MapGet("/hello", () => "Hello World!").WithTags("Ged")
 app.ApplyMigrations();
 app.UseSwagger();
 app.UseSwaggerUI();
-app.UseHttpsRedirection();
 app.MapCarter();
 app.Run();
