@@ -61,7 +61,7 @@ public class CreateProdutoModule : ICarterModule
             .WithName("CreateProduct")
             .IncludeInOpenApi();
 
-        app.MapGet("/api/signature", async ([FromServices] ProdutoDbContext context) =>
+        app.MapGet("/api/produtos", async ([FromServices] ProdutoDbContext context) =>
         {
             return await context.Produtos
                 .Include(x => x.Id)
