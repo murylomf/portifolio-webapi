@@ -17,6 +17,26 @@ namespace Portifolio.Webapi.Persistence.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
 
+            modelBuilder.Entity("Portifolio.Webapi.Models.Carteira", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(24)
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("IdProduto")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Vencimento")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Carteira");
+                });
+
             modelBuilder.Entity("Portifolio.Webapi.Models.Produto", b =>
                 {
                     b.Property<Guid>("Id")

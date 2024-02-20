@@ -3,6 +3,7 @@ using Carter.OpenApi;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Portifolio.Webapi.Contracts;
+using Portifolio.Webapi.Models;
 using Portifolio.Webapi.Persistence;
 
 namespace Portifolio.Webapi.Endpoints;
@@ -11,19 +12,39 @@ public class NegociacaoModule () : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapDelete("api/negociar/vender", async ([FromServices] ProdutoDbContext context, VendaProdutoRequest request) =>
+        app.MapPost("api/negociar/vender", async ([FromServices] ProdutoDbContext context, ProdutoRequest request) =>
             {
-                var produto = await context.Produtos
+                var produto = await context.Carteira
                     .AsSingleQuery()
-                    .FirstOrDefaultAsync(x => x.Id == request.IdProduto);
+                    .FirstOrDefaultAsync(x => x.IdProduto == request.IdProduto);
                 
-                context.Produtos.Remove(produto!);
+                context.Carteira.Remove(produto!);
                 await context.SaveChangesAsync();
 
             })
-            .Accepts<VendaProdutoRequest>("application/json")
-            .WithTags("Produto")
-            .WithName("CreateProduct")
+            .Accepts<ProdutoRequest>("application/json")
+            .WithTags("negociar")
+            .WithName("vender")
+            .IncludeInOpenApi();
+        
+        app.MapPost("api/negociar/comprar", async ([FromServices] ProdutoDbContext context, ProdutoRequest request) =>
+            {
+                var vencimento = DateTime.Today.AddDays(30);
+                
+                var produto = new Carteira
+                {
+                    Vencimento = vencimento.ToLongDateString(),
+                    IdProduto = request.IdProduto
+                };
+                
+                
+                context.Carteira.Add(produto);
+                await context.SaveChangesAsync();
+        
+            })
+            .Accepts<ProdutoRequest>("application/json")
+            .WithTags("negociar")
+            .WithName("comprar")
             .IncludeInOpenApi();
     }
 }

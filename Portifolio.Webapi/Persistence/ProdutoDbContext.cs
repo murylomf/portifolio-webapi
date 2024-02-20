@@ -7,6 +7,7 @@ public class ProdutoDbContext(DbContextOptions<ProdutoDbContext> options)
     : DbContext(options)
 {
     public DbSet<Produto>? Produtos { get; set; }
+    public DbSet<Carteira>? Carteira { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
