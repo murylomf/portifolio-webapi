@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Portifolio.Webapi.Persistence;
+using Portifolio.Webapi.Services;
 
 namespace Portifolio.Webapi.Notification;
 
@@ -11,6 +12,7 @@ public class ExpireAlertNotification
     public class Handler(
         ProdutoDbContext context,
         IMediator mediator,
+        ISendEmail sendEmail,
         ILogger<ExpireAlertNotification> logger): INotificationHandler<Notification>
     {
         
@@ -25,13 +27,16 @@ public class ExpireAlertNotification
                 {
                     logger.LogInformation("verificando vencimentos");
                 
-                    produtos.ForEach((produto) =>
+                    produtos.ForEach(async (produto) =>
                     {
                         var diff = produto.Vencimento - today;
                     
                         if (diff.TotalDays < 7)
                         {
-                            logger.LogInformation("Produto prestes a vencer: " + produto.Id);
+                            await sendEmail.SendEmailAsync(
+                                "teste@gmail.com", 
+                                "vencimentos", 
+                                "teste");
                         }
                     } );
               
