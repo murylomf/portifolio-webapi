@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Portifolio.Webapi.Persistence;
 
@@ -10,9 +11,11 @@ using Portifolio.Webapi.Persistence;
 namespace Portifolio.Webapi.Persistence.Migrations
 {
     [DbContext(typeof(ProdutoDbContext))]
-    partial class ProdutoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240220203826_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0");

@@ -33,7 +33,7 @@ public class NegociacaoModule () : ICarterModule
                 
                 var produto = new Carteira
                 {
-                    Vencimento = vencimento.ToLongDateString(),
+                    Vencimento = vencimento,
                     IdProduto = request.IdProduto
                 };
                 
