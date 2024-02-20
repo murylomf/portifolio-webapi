@@ -2,12 +2,13 @@
 using Carter.OpenApi;
 using FluentValidation;
 using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Portifolio.Webapi.Contracts;
 using Portifolio.Webapi.Persistence;
 using Portifolio.Webapi.Models;
-using Portifolio.Webapi.Persistence;
 
-namespace Portifolio.Webapi.Features;
+namespace Portifolio.Webapi.Endpoints;
 
 public class CreateProduto
 {
@@ -57,7 +58,20 @@ public class CreateProdutoModule : ICarterModule
             })
             .Accepts<CreateProdutoRequest>("application/json")
             .WithTags("Produto")
-            .WithName("CreateProduto")
+            .WithName("CreateProduct")
             .IncludeInOpenApi();
+
+        app.MapGet("/api/signature", async ([FromServices] ProdutoDbContext context) =>
+        {
+            return await context.Produtos
+                .Include(x => x.Id)
+                .Include(x => x.Vencimento)
+                .Include(x => x.Valor)
+                .AsSingleQuery()
+                .ToListAsync();
+        })
+        .WithTags("Produto")
+        .WithName("GetProduct")
+        .IncludeInOpenApi();
     }
 }
