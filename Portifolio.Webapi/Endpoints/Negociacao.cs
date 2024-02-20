@@ -29,11 +29,9 @@ public class NegociacaoModule () : ICarterModule
         
         app.MapPost("api/negociar/comprar", async ([FromServices] ProdutoDbContext context, ProdutoRequest request) =>
             {
-                var vencimento = DateTime.Today.AddDays(30);
-                
                 var produto = new Carteira
                 {
-                    Vencimento = vencimento,
+                    Vencimento = request.Vencimento,
                     IdProduto = request.IdProduto
                 };
                 

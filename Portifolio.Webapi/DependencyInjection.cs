@@ -3,6 +3,7 @@ using Carter;
 using Carter.OpenApi;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Portifolio.Webapi.Jobs;
 using Portifolio.Webapi.Persistence;
 namespace Portifolio.Webapi;
 
@@ -13,11 +14,13 @@ public static class DependencyInjection
     public static IServiceCollection AddWebApi(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddCarter();
+        
         services.AddDbContext<ProdutoDbContext>(options =>
         {
             options.UseSqlite(@"Data Source=Persistence/produtos.db");
         });
-
+        
+        services.AddHostedService<ExpireAlertJob>();
         services.AddMediatR(config => config.RegisterServicesFromAssembly(Assembly));
 
         return services;
