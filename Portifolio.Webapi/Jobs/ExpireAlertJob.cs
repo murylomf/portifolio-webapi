@@ -21,7 +21,7 @@ public class ExpireAlertJob(
             await mediator!.Publish(new ExpireAlertNotification.Notification(),
                 stoppingToken);
             
-            await Task.Delay(TimeSpan.FromDays(5), stoppingToken);
+            await Task.Delay(TimeSpan.FromDays(1), stoppingToken);
         }
     }
 }
